@@ -1,1 +1,18 @@
-<p>cause works!</p>
+<table id="causeTable" class="table table-hover table-dark text-center">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>TargetGoal</th>
+            <th>CurrentAmmount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cause of Causes">
+            <td>{{cause.Title}}</td>
+            <td>{{cause.Description}}</td>
+            <td>{{cause.TargetGoal}}</td>
+            <td>{{cause.CurrentAmmount}}</td>
+        </tr>
+    </tbody>
+</table>

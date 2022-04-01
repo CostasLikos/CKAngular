@@ -1,10 +1,10 @@
 export interface Cause{
     Id:any;
-    Title:string;
-    Description:string;
-    Photo:string;
-    TargetGoal:number;
-    CurrentAmmount:number;
+    Title:string|any;
+    Description:string|any;
+    Photo:string|any;
+    TargetGoal:number|any;
+    CurrentAmmount:number|any;
     ModeratorId:any;
     Moderator:any;
 }
