@@ -11,9 +11,10 @@ export class CauseComponent implements OnInit {
 
 
   //Properties
-Causes!: Cause[];
+  Causes!: Cause[];
   //Methods
-  ReadCauses(){
+  //READ
+  ReadCauses() {
     this.CauseService.getCauses().subscribe(data => this.Causes = data);
   }
 
