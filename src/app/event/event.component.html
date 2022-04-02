@@ -1,1 +1,25 @@
-<p>event works!</p>
+<div class="container">
+    <div class="card m-5 p-3">
+        <div class="card-body">
+            <table class="table table-bordered table-striped table-hover table-dark text-center">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Address</th>
+                    <th>EventDate</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let ev of Events">
+                    <td>{{ ev.Title }}</td>
+                    <td>{{ ev.Description }}</td>
+                    <td>{{ ev.Address }}</td>
+                    <td>{{ ev.EventDate }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
