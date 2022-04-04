@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card m-5 p-3">
         <div class="card-body">
-            <table class="table table-bordered table-striped table-hover table-dark text-center">
+            <table class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr>
                     <th>Title</th>
@@ -15,7 +15,7 @@
                     <td>{{ ev.Title }}</td>
                     <td>{{ ev.Description }}</td>
                     <td>{{ ev.Address }}</td>
-                    <td>{{ ev.EventDate }}</td>
+                    <td>{{ ev.EventDate.substring(0, 10)}}</td>
                 </tr>
                 </tbody>
             </table>

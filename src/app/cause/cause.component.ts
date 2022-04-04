@@ -1,21 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Cause } from './cause.model';
 import { CauseService } from "./cause.service";
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-cause',
   templateUrl: './cause.component.html',
   styleUrls: ['./cause.component.css']
 })
-export class CauseComponent implements OnInit {
+export class CauseComponent implements OnInit, OnDestroy {
 
 
   //Properties
   Causes!: Cause[];
+
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<Cause> = new Subject<Cause>();
   //Methods
   //READ
   ReadCauses() {
-    this.CauseService.getCauses().subscribe(data => this.Causes = data);
+    this.CauseService.getCauses().subscribe(data =>{this.Causes = data});
   }
 
 
@@ -23,6 +27,9 @@ export class CauseComponent implements OnInit {
 
   ngOnInit(): void {
     this.ReadCauses();
+  }
+  ngOnDestroy(): void {
+    this.dtTrigger.unsubscribe();
   }
 
 }
