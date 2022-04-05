@@ -1,5 +1,4 @@
 <div class="container">
-
     <div class="card m-5 p-3">
         <div class="card-body">
             <div class="form-group card m-5 p-1">
@@ -15,7 +14,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let cause of Causes | filter:filterTerm | paginate: {  id: 'listing_pagination',
+                    <tr *ngFor="let cause of Causes | filter:filterTerm | paginate: {  id: 'listing_pagination_cause',
                                                                                        itemsPerPage: 10,
                                                                                        currentPage: page,
                                                                                        totalItems: totalRecords }">
@@ -24,16 +23,15 @@
                         <td>{{cause.TargetGoal}}</td>
                         <td>{{cause.CurrentAmmount}}</td>
                     </tr>
-
                 </tbody>
             </table>
             <div class="col-md-12">
-                <pagination-controls id="listing_pagination"
+                <pagination-controls id="listing_pagination_cause"
                     previousLabel="Prev"
                     nextLabel="Next"
                     [responsive]="true"
                     [directionLinks]="true"
-                    (pageChange)= "handlePageChange($event)">
+                    (pageChange)= "handlePageChangeCause($event)">
                 </pagination-controls>
             </div>
         </div>

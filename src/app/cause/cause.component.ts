@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
   styleUrls: ['./cause.component.css'],
 })
 export class CauseComponent implements OnInit, OnDestroy {
-
+  //Filtering
   filterTerm: any
   //Properties
   Causes!: Cause[];
@@ -18,13 +18,11 @@ export class CauseComponent implements OnInit, OnDestroy {
   page: number = 1
 
 
-
-  
   dtTrigger: Subject<Cause> = new Subject<Cause>();
   //Methods
   //READ
   ReadCauses() {
-    this.CauseService.getCauses().subscribe(data => { 
+    this.CauseService.getCauses().subscribe(data => {
       this.Causes = data
       this.totalRecords = data.length
     });
@@ -40,7 +38,7 @@ export class CauseComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
   }
-  handlePageChange(event: any){
+  handlePageChangeCause(event: any) {
     this.page = event;
     this.ReadCauses();
   }
