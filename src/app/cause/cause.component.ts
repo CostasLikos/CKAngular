@@ -7,34 +7,28 @@ import { Subject } from 'rxjs';
   selector: 'app-cause',
   templateUrl: './cause.component.html',
   styleUrls: ['./cause.component.css'],
-  template: `
-  <ul>
-      <li *ngFor="let cause of Causes | paginate: { itemsPerPage: 10, currentPage: p }"> ... </li>
-    </ul>
-    <pagination-controls
-  previousLabel="Prev"
-  nextLabel="Next"
-  responsive="true"
-></pagination-controls>
-    `
-
-
 })
 export class CauseComponent implements OnInit, OnDestroy {
 
   filterTerm: any
   //Properties
   Causes!: Cause[];
-  p: number = 1;
-  
+  //Paging
+  totalRecords!: number;
+  page: number = 1
 
-  dtOptions: DataTables.Settings = {};
+
+
+  
   dtTrigger: Subject<Cause> = new Subject<Cause>();
   //Methods
   //READ
   ReadCauses() {
-    this.CauseService.getCauses().subscribe(data =>{this.Causes = data});
-    
+    this.CauseService.getCauses().subscribe(data => { 
+      this.Causes = data
+      this.totalRecords = data.length
+    });
+
   }
 
 
@@ -46,5 +40,11 @@ export class CauseComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.dtTrigger.unsubscribe();
   }
+  handlePageChange(event: any){
+    this.page = event;
+    this.ReadCauses();
+  }
+
+
 
 }

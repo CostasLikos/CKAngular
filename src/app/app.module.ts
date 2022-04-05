@@ -10,7 +10,6 @@ import { EventComponent } from './event/event.component';
 import { DataTablesModule } from 'angular-datatables';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { PaginationControlsComponent } from './components/pagination-controls/pagination-controls.component';
 
 
 @NgModule({
@@ -18,7 +17,6 @@ import { PaginationControlsComponent } from './components/pagination-controls/pa
     AppComponent,
     CauseComponent,
     EventComponent,
-    PaginationControlsComponent
   ],
   imports: [
     BrowserModule,

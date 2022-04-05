@@ -15,17 +15,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let cause of Causes | filter:filterTerm | paginate: { id: 'foo',
-                                                                                        itemsPerPage: 10,
-                                                                                        currentPage: p,
-                                                                                        totalItems: Causes.length }">
+                    <tr *ngFor="let cause of Causes | filter:filterTerm | paginate: {  id: 'listing_pagination',
+                                                                                       itemsPerPage: 10,
+                                                                                       currentPage: page,
+                                                                                       totalItems: totalRecords }">
                         <td>{{cause.Title}}</td>
                         <td>{{cause.Description}}</td>
                         <td>{{cause.TargetGoal}}</td>
                         <td>{{cause.CurrentAmmount}}</td>
                     </tr>
+
                 </tbody>
             </table>
+            <div class="col-md-12">
+                <pagination-controls id="listing_pagination"
+                    previousLabel="Prev"
+                    nextLabel="Next"
+                    [responsive]="true"
+                    [directionLinks]="true"
+                    (pageChange)= "handlePageChange($event)">
+                </pagination-controls>
+            </div>
         </div>
     </div>
 </div>
