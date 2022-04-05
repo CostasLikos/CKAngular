@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { CauseComponent } from './cause/cause.component';
 import { EventComponent } from './event/event.component';
 import { DataTablesModule } from 'angular-datatables';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { DataTablesModule } from 'angular-datatables';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    DataTablesModule
+    DataTablesModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

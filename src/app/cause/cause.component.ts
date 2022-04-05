@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
 })
 export class CauseComponent implements OnInit, OnDestroy {
 
-
+  filterTerm: any
   //Properties
   Causes!: Cause[];
 
@@ -20,6 +20,7 @@ export class CauseComponent implements OnInit, OnDestroy {
   //READ
   ReadCauses() {
     this.CauseService.getCauses().subscribe(data =>{this.Causes = data});
+    
   }
 
 
