@@ -9,13 +9,16 @@ import { CauseComponent } from './cause/cause.component';
 import { EventComponent } from './event/event.component';
 import { DataTablesModule } from 'angular-datatables';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PaginationControlsComponent } from './components/pagination-controls/pagination-controls.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CauseComponent,
-    EventComponent
+    EventComponent,
+    PaginationControlsComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     HttpClientModule,
     DataTablesModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

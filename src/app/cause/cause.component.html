@@ -1,12 +1,11 @@
-
 <div class="container">
-    
+
     <div class="card m-5 p-3">
         <div class="card-body">
             <div class="form-group card m-5 p-1">
                 <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="filterTerm">
             </div>
-           <table class="table table-bordered table-striped table-hover">
+            <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Title</th>
@@ -16,7 +15,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let cause of Causes | filter:filterTerm">
+                    <tr *ngFor="let cause of Causes | filter:filterTerm | paginate: { id: 'foo',
+                                                                                        itemsPerPage: 10,
+                                                                                        currentPage: p,
+                                                                                        totalItems: Causes.length }">
                         <td>{{cause.Title}}</td>
                         <td>{{cause.Description}}</td>
                         <td>{{cause.TargetGoal}}</td>

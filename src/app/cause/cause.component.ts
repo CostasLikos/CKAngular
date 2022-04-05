@@ -6,13 +6,27 @@ import { Subject } from 'rxjs';
 @Component({
   selector: 'app-cause',
   templateUrl: './cause.component.html',
-  styleUrls: ['./cause.component.css']
+  styleUrls: ['./cause.component.css'],
+  template: `
+  <ul>
+      <li *ngFor="let cause of Causes | paginate: { itemsPerPage: 10, currentPage: p }"> ... </li>
+    </ul>
+    <pagination-controls
+  previousLabel="Prev"
+  nextLabel="Next"
+  responsive="true"
+></pagination-controls>
+    `
+
+
 })
 export class CauseComponent implements OnInit, OnDestroy {
 
   filterTerm: any
   //Properties
   Causes!: Cause[];
+  p: number = 1;
+  
 
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<Cause> = new Subject<Cause>();
