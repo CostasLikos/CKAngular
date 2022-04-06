@@ -7,17 +7,17 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">EventDate</th>
+                        <th (click)="sort('Title')" scope="col">Title<i class="fa fa-sort"></i></th>
+                        <th (click)="sort('Description')" scope="col">Description<i class="fa fa-sort"></i></th>
+                        <th (click)="sort('Address')" scope="col">Address<i class="fa fa-sort"></i></th>
+                        <th (click)="sort('EventDate')" scope="col">EventDate<i class="fa fa-sort"></i></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let ev of Events | filter:filterTerm | paginate: {  id: 'listing_pagination_event',
-                                                                                    itemsPerPage: 10,
-                                                                                    currentPage: page,
-                                                                                    totalItems: totalRecords }">
+                    <tr *ngFor="let ev of Events | filter:filterTerm | filter:filterTerm |orderBy: orderHeader: isDescOrder | paginate: {  id: 'listing_pagination_event',
+                                                                                                                                           itemsPerPage: 11,
+                                                                                                                                           currentPage: page,
+                                                                                                                                           totalItems: totalRecords }">
                         <td>{{ ev.Title }}</td>
                         <td>{{ ev.Description }}</td>
                         <td>{{ ev.Address }}</td>

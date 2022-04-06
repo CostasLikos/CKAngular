@@ -7,17 +7,17 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">TargetGoal</th>
-                        <th scope="col">CurrentAmmount</th>
+                        <th (click)="sort('Title')" scope="col">Title<i class="fa fa-sort"></i></th>
+                        <th (click)="sort('Description')" scope="col">Description<i class="fa fa-sort"></i></th>
+                        <th (click)="sort('TargetGoal')" scope="col">TargetGoal<i class="fa fa-sort"></i></th>
+                        <th (click)="sort('CurrentAmmount')" scope="col">CurrentAmmount<i class="fa fa-sort"></i></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let cause of Causes | filter:filterTerm | paginate: {  id: 'listing_pagination_cause',
-                                                                                       itemsPerPage: 10,
-                                                                                       currentPage: page,
-                                                                                       totalItems: totalRecords }">
+                    <tr *ngFor="let cause of Causes | filter:filterTerm |orderBy: orderHeader: isDescOrder | paginate: {  id: 'listing_pagination_cause',
+                                                                                                                          itemsPerPage: 10,
+                                                                                                                          currentPage: page,
+                                                                                                                          totalItems: totalRecords }">
                         <td>{{cause.Title}}</td>
                         <td>{{cause.Description}}</td>
                         <td>{{cause.TargetGoal}}</td>
@@ -29,8 +29,6 @@
                 <pagination-controls id="listing_pagination_cause"
                     previousLabel="Prev"
                     nextLabel="Next"
-                    [responsive]="true"
-                    [directionLinks]="true"
                     (pageChange)= "handlePageChangeCause($event)">
                 </pagination-controls>
             </div>

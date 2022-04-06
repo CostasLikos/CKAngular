@@ -15,7 +15,10 @@ export class CauseComponent implements OnInit, OnDestroy {
   Causes!: Cause[];
   //Paging
   totalRecords!: number;
-  page: number = 1
+  page: number = 1;
+  //Sorting
+  orderHeader: string = '';
+  isDescOrder: boolean = true;
 
 
   dtTrigger: Subject<Cause> = new Subject<Cause>();
@@ -26,7 +29,6 @@ export class CauseComponent implements OnInit, OnDestroy {
       this.Causes = data
       this.totalRecords = data.length
     });
-
   }
 
 
@@ -42,7 +44,9 @@ export class CauseComponent implements OnInit, OnDestroy {
     this.page = event;
     this.ReadCauses();
   }
-
-
+  sort(headerName: string) {
+    this.isDescOrder = !this.isDescOrder;
+    this.orderHeader = headerName;
+  }
 
 }

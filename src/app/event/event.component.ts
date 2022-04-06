@@ -3,7 +3,6 @@ import { Event } from './event.model';
 import { EventService } from "./event.service";
 import { Subject } from 'rxjs';
 
-
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
@@ -17,6 +16,9 @@ export class EventComponent implements OnInit {
   //Paging
   totalRecords!: number;
   page: number = 1
+  //Sorting
+  orderHeader: string = '';
+  isDescOrder: boolean = true;
 
 
   dtTrigger: Subject<Event> = new Subject<Event>();
@@ -41,6 +43,10 @@ export class EventComponent implements OnInit {
   handlePageChangeEvent(event: any) {
     this.page = event;
     this.ReadEvents();
+  }
+  sort(headerName: string) {
+    this.isDescOrder = !this.isDescOrder;
+    this.orderHeader = headerName;
   }
 
 }
