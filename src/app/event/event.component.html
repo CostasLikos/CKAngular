@@ -15,7 +15,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let ev of Events | filter:filterTerm | paginate: {  id: 'listing_pagination_event',
-                                                                                    itemsPerPage: 13,
+                                                                                    itemsPerPage: 10,
                                                                                     currentPage: page,
                                                                                     totalItems: totalRecords }">
                         <td>{{ ev.Title }}</td>
