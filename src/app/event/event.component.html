@@ -15,7 +15,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let ev of Events | filter:filterTerm | paginate: {  id: 'listing_pagination_event',
-                                                                                    itemsPerPage: 10,
+                                                                                    itemsPerPage: 13,
                                                                                     currentPage: page,
                                                                                     totalItems: totalRecords }">
                         <td>{{ ev.Title }}</td>
@@ -29,8 +29,6 @@
                 <pagination-controls id="listing_pagination_event"
                     previousLabel="Prev"
                     nextLabel="Next"
-                    [responsive]="true"
-                    [directionLinks]="true"
                     (pageChange)= "handlePageChangeEvent($event)">
                 </pagination-controls>
             </div>
