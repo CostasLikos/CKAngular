@@ -1,0 +1,21 @@
+.container {
+    padding: 0;
+    margin: 0 auto;
+}
+
+i{
+    margin-right: 10px;
+    color:rgb(225, 38, 38);
+}
+
+#listing_pagination_cause{
+    color:rgb(225, 38, 38);
+    
+}
+
+.comp-pagination {
+    padding: 0.1875rem 0.625rem;
+    background: #e8212b;
+    color: #fefefe;
+    cursor: default;
+}

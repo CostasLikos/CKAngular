@@ -11,13 +11,15 @@ import { DataTablesModule } from 'angular-datatables';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
+import { BackbuttonComponent } from './backbutton/backbutton.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CauseComponent,
-    EventComponent
+    EventComponent,
+    BackbuttonComponent,
   ],
   imports: [
     BrowserModule,

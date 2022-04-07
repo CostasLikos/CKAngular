@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CKAngular';
+
+  // onKeydown(event: { key: string; }) {
+  //   if (event.key === "Backspace") {
+  //     console.log(event);
+  //   }
+  // }
 }
