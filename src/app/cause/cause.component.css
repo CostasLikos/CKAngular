@@ -8,14 +8,17 @@ i{
     color:rgb(225, 38, 38);
 }
 
-#listing_pagination_cause{
-    color:rgb(225, 38, 38);
-    
-}
 
 .comp-pagination {
     padding: 0.1875rem 0.625rem;
     background: #e8212b;
+    color: #fefefe;
+    cursor: default;
+}
+
+.ngx-pagination .current{
+    padding: 0.1875rem 0.625rem;
+    background: #e6153f !important;
     color: #fefefe;
     cursor: default;
 }
