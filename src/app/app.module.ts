@@ -5,13 +5,13 @@ import { FormsModule } from "@angular/forms"
 import { HttpClientModule } from '@angular/common/http'; //HttpClientModule
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CauseComponent } from './cause/cause.component';
-import { EventComponent } from './event/event.component';
+import { CauseComponent } from './components/cause/cause.component';
+import { EventComponent } from './components/event/event.component';
 import { DataTablesModule } from 'angular-datatables';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
-import { BackbuttonComponent } from './backbutton/backbutton.component';
+import { BackbuttonComponent } from './tools/backbutton/backbutton.component';
 
 
 @NgModule({
